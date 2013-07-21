@@ -67,6 +67,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<plugin>
 				<groupId>com.jayway.maven.plugins.android.generation2</groupId>
@@ -100,6 +101,37 @@
 			<build>
 				<plugins>
 					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jarsigner-plugin</artifactId>
+						<version>1.2</version>
+						<executions>
+							<execution>
+								<id>signing</id>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+								<phase>package</phase>
+								<configuration>
+									<removeExistingSignatures>true</removeExistingSignatures>
+									<archiveDirectory></archiveDirectory>
+									<includes>
+										<include>${project.build.directory}/${project.artifactId}.apk</include>
+									</includes>
+									<keystore>${keystore.path}</keystore>
+									<storepass>${keystore.password}</storepass>
+									<keypass>${keystore.key.password}</keypass>
+									<alias>${keystore.key.alias}</alias>
+									<arguments>
+										<argument>-sigalg</argument>
+										<argument>MD5withRSA</argument>
+										<argument>-digestalg</argument>
+										<argument>SHA1</argument>
+									</arguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
 						<groupId>com.jayway.maven.plugins.android.generation2</groupId>
 						<artifactId>android-maven-plugin</artifactId>
 						<configuration>
@@ -121,38 +153,32 @@
 							<sign>
 								<debug>false</debug>
 							</sign>
+							<manifest>
+								<debuggable>false</debuggable>
+								<versionCodeAutoIncrement>true</versionCodeAutoIncrement>
+							</manifest>
 							<zipalign>
-								<skip>false</skip>
+                                <skip>false</skip>
+								<verbose>true</verbose>
+								<inputApk>${project.build.directory}/${project.artifactId}.apk</inputApk>
+								<outputApk>${project.build.directory}/${project.artifactId}-signed-aligned.apk
+								</outputApk>
 							</zipalign>
 						</configuration>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-jarsigner-plugin</artifactId>
-						<version>1.2</version>
 						<executions>
 							<execution>
-								<id>signing</id>
+								<id>manifestUpdate</id>
+								<phase>process-resources</phase>
 								<goals>
-									<goal>sign</goal>
+									<goal>manifest-update</goal>
 								</goals>
+							</execution>
+							<execution>
+								<id>alignApk</id>
 								<phase>package</phase>
-								<configuration>
-									<archiveDirectory></archiveDirectory>
-									<includes>
-										<include>target/*.apk</include>
-									</includes>
-									<keystore>${keystore.path}</keystore>
-									<storepass>${keystore.password}</storepass>
-									<keypass>${keystore.key.password}</keypass>
-									<alias>${keystore.key.alias}</alias>
-									<arguments>
-										<argument>-sigalg</argument>
-										<argument>MD5withRSA</argument>
-										<argument>-digestalg</argument>
-										<argument>SHA1</argument>
-									</arguments>
-								</configuration>
+								<goals>
+									<goal>zipalign</goal>
+								</goals>
 							</execution>
 						</executions>
 					</plugin>
