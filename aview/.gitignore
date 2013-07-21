@@ -1,0 +1,10 @@
+/.apt_generated
+/.settings
+/bin
+/gen
+/target
+/.classpath
+/.project
+/.factorypath
+/.pmd
+/lint.xml

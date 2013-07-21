@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.aview.widget.RelativeLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_light"
+    android:fitsSystemWindows="true"
+    android:paddingTop="?android:attr/actionBarSize"
+    tools:context=".EpisodeActivity_" >
+
+    <!-- android:layout_marginTop="?android:attr/actionBarSize" android:fitsSystemWindows="false" -->
+
+    <com.github.aview.widget.FixedAspectRatioFrameLayout
+        xmlns:aview="http://schemas.android.com/apk/res/com.github.aview.app"
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:tag="resizable_thumbnail"
+        aview:aspectRatio="@fraction/default_video_player_aspect_ratio" >
+
+        <VideoView
+            android:id="@+id/video_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center" />
+
+        <ProgressBar
+            android:id="@+id/episode_video_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:indeterminateOnly="true"
+            android:visibility="gone" />
+    </com.github.aview.widget.FixedAspectRatioFrameLayout>
+
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/video_layout" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp" >
+
+            <TextView
+                android:id="@+id/series_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_medium"
+                android:text="Series Title"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/episode_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/series_title"
+                android:paddingBottom="@dimen/padding_medium"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_medium"
+                android:text="Episode Title"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/episode_aired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/episode_title"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_small"
+                android:text="Aired Date"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/episode_expires"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/episode_aired"
+                android:layout_alignBottom="@+id/episode_aired"
+                android:layout_alignParentRight="true"
+                android:layout_toRightOf="@+id/episode_aired"
+                android:ellipsize="end"
+                android:gravity="end"
+                android:maxLines="1"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_small"
+                android:text="Expires"
+                android:textAlignment="textEnd"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/episode_rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/episode_aired"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_small"
+                android:text="Rating"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <TextView
+                android:id="@+id/episode_warning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/episode_aired"
+                android:layout_toRightOf="@id/episode_rating"
+                android:gravity="end"
+                android:paddingBottom="@dimen/padding_small"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_small"
+                android:text="Warning"
+                android:textAlignment="textEnd"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+            <View
+                android:id="@+id/description_spacer"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/episode_warning"
+                android:background="@color/dark_grey"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <TextView
+                android:id="@+id/episode_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/description_spacer"
+                android:paddingBottom="@dimen/padding_large"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp"
+                android:paddingTop="@dimen/padding_large"
+                android:text="Long Episode Description Text" />
+
+            <View
+                android:id="@+id/series_list_spacer"
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/episode_description"
+                android:background="@color/dark_grey"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" />
+
+            <LinearLayout
+                android:id="@+id/series_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/series_list_spacer"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+</com.github.aview.widget.RelativeLayout2>

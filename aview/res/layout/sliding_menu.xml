@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sliding_menu_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/drawer_background"
+    android:divider="@color/drawer_divider"
+    android:dividerHeight="1dp"
+    android:choiceMode="singleChoice">
+</ListView>

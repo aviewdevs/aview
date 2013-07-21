@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.aview.widget.RelativeLayout2 xmlns:android="http://schemas.android.com/apk/res/android"
+    
+    android:id="@+id/root_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
+    android:fitsSystemWindows="false">
+    <!-- android:layout_marginTop="?android:attr/actionBarSize" android:fitsSystemWindows="false" -->
+
+    <com.github.aview.widget.FixedAspectRatioFrameLayout
+        xmlns:aview="http://schemas.android.com/apk/res/com.github.aview.app"
+        aview:aspectRatio="@fraction/default_video_player_aspect_ratio"
+        android:id="@+id/video_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:tag="resizable_thumbnail" >
+
+        <VideoView
+            android:id="@+id/video_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleType="center" />
+
+        <ProgressBar
+            android:id="@+id/episode_video_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateBehavior="cycle"
+            android:indeterminateOnly="true" 
+            android:visibility="gone"/>
+    </com.github.aview.widget.FixedAspectRatioFrameLayout>
+</com.github.aview.widget.RelativeLayout2>

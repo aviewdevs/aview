@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/video_item" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:aview="http://schemas.android.com/apk/res/com.github.aview.app">
+    <com.github.aview.widget.FixedAspectRatioFrameLayout android:id="@+id/thumbnail_layout" android:tag="resizable_thumbnail" android:background="@drawable/bg_video_thumb" android:layout_width="fill_parent" android:layout_height="wrap_content" aview:aspectRatio="@fraction/default_video_item_thumbnail_aspect_ratio">
+        <ImageView android:id="@+id/thumbnail" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" />
+        <ImageView android:id="@+id/gradient" android:layout_width="fill_parent" android:layout_height="fill_parent" android:src="@drawable/video_gradient_overlay_shape" android:scaleType="fitXY" />
+        <ViewStub android:id="@+id/unplayable_overlay_stub" android:layout="@layout/unplayable_overlay" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        <!-- ViewStub android:layout_gravity="bottom|right|center" android:id="@id/contextual_menu_anchor_stub" android:layout="@layout/contextual_menu_anchor" android:layout_width="48.0dip" android:layout_height="48.0dip" /-->
+    </com.github.aview.widget.FixedAspectRatioFrameLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@+id/title_region" android:layout_width="fill_parent" android:layout_height="wrap_content" android:weightSum="1.0" android:layout_alignLeft="@id/thumbnail_layout" android:layout_alignBottom="@id/thumbnail_layout">
+        <TextView android:textSize="@dimen/default_video_item_title_font_size" android:textStyle="normal" android:textColor="@color/video_item_duration_font" android:ellipsize="end" android:id="@+id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="8.0dip" android:maxLines="2" android:includeFontPadding="false" android:layout_weight="0.25" android:textIsSelectable="false"/>
+        <View android:id="@+id/title_padding" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="0.75" />
+    </LinearLayout>
+    <TextView android:textSize="@dimen/default_video_item_duration_font_size" android:textStyle="normal" android:textColor="@color/video_item_duration_font" android:id="@+id/duration" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginBottom="4.0dip" android:maxLines="1" android:layout_above="@id/title_region" android:layout_alignLeft="@id/thumbnail_layout" android:textIsSelectable="false" />
+    <View android:id="@+id/duration_underline" android:background="#7fffffff" android:layout_width="fill_parent" android:layout_height="2.0dip" android:layout_marginLeft="8.0dip" android:layout_marginTop="-2.0dip" android:layout_below="@id/duration" android:layout_alignLeft="@id/thumbnail_layout" android:layout_alignRight="@id/duration" />
+    <ImageView android:id="@+id/rating_image_view" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignRight="@id/thumbnail_layout" android:layout_alignBottom="@id/thumbnail_layout" android:layout_margin="@dimen/padding_small" android:scaleType="fitXY"/>
+</RelativeLayout>

@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_font_size">18.0sp</dimen>
+    <dimen name="medium_font_size">20.0sp</dimen>
+    <dimen name="large_font_size">22.0sp</dimen>
+    <dimen name="extra_extra_small_font_size">14.0sp</dimen>
+    <dimen name="extra_small_font_size">16.0sp</dimen>
+    <dimen name="extra_large_font_size">24.0sp</dimen>
+    <dimen name="huge_font_size">26.0sp</dimen>
+    <dimen name="content_margin_top">24.0dip</dimen>
+    <dimen name="content_margin_left">24.0dip</dimen>
+    <dimen name="content_margin_right">24.0dip</dimen>
+    <dimen name="thumbnail_width">150.0dip</dimen>
+    <dimen name="thumbnail_height">75.0dip</dimen>
+    <dimen name="guide_avatar_width">72.0dip</dimen>
+    <dimen name="guide_avatar_height">72.0dip</dimen>
+    <dimen name="guide_small_avatar_width">48.0dip</dimen>
+    <dimen name="guide_small_avatar_height">48.0dip</dimen>
+    <dimen name="guide_feed_avatar_width">48.0dip</dimen>
+    <dimen name="guide_feed_avatar_height">48.0dip</dimen>
+    <dimen name="detailed_video_item_center_margin">8.0dip</dimen>
+    <item type="dimen" name="detailed_video_title_font_size">@dimen/large_font_size</item>
+    <item type="dimen" name="detailed_video_author_font_size">@dimen/medium_font_size</item>
+    <dimen name="detailed_video_details_margin">12.0dip</dimen>
+    <item type="dimen" name="detailed_channel_item_font_size">@dimen/small_font_size</item>
+    <dimen name="channel_store_margin_left">16.0dip</dimen>
+    <dimen name="channel_store_margin_right">16.0dip</dimen>
+    <dimen name="channel_store_margin_top">8.0dip</dimen>
+    <dimen name="channel_store_margin_bottom">16.0dip</dimen>
+    <dimen name="channel_store_inter_item_padding">6.0dip</dimen>
+    <dimen name="channel_store_category_header_margin_top">4.0dip</dimen>
+    <dimen name="channel_store_category_header_margin_left">12.0dip</dimen>
+    <dimen name="channel_store_category_header_selection_radius">4.0dip</dimen>
+    <dimen name="channel_store_channel_avatar_margin">16.0dip</dimen>
+    <dimen name="channel_store_category_margin_left">16.0dip</dimen>
+    <dimen name="channel_store_category_margin_right">16.0dip</dimen>
+    <dimen name="channel_store_category_margin_top">16.0dip</dimen>
+    <dimen name="channel_store_category_margin_bottom">16.0dip</dimen>
+    <dimen name="small_thumbnail_width">60.0dip</dimen>
+    <dimen name="small_thumbnail_height">60.0dip</dimen>
+    <dimen name="list_item_padding">4.0dip</dimen>
+    <dimen name="cell_padding_left">4.0dip</dimen>
+    <dimen name="cell_padding_right">4.0dip</dimen>
+    <dimen name="cell_padding_top">4.0dip</dimen>
+    <dimen name="cell_padding_bottom">4.0dip</dimen>
+    <dimen name="row_adapter_margin_left">16.0dip</dimen>
+    <dimen name="row_adapter_margin_right">16.0dip</dimen>
+    <dimen name="row_adapter_margin_top">16.0dip</dimen>
+    <dimen name="row_adapter_margin_bottom">16.0dip</dimen>
+    <dimen name="selection_radius">4.0dip</dimen>
+    <dimen name="inter_column_padding">8.0dip</dimen>
+    <dimen name="inter_row_padding">8.0dip</dimen>
+    <dimen name="contextual_menu_width">275.0dip</dimen>
+    <dimen name="the_feed_item_text_separation">28.0dip</dimen>
+    <dimen name="widget_min_width">270.0dip</dimen>
+    <dimen name="widget_min_height">160.0dip</dimen>
+    <dimen name="widget_teaser_width">225.0dip</dimen>
+    <dimen name="widget_teaser_height">126.0dip</dimen>
+    <dimen name="upload_workspace_margin_bottom">70.0dip</dimen>
+    <dimen name="channel_layer_subscribe_text_width">160.0dip</dimen>
+    <dimen name="channel_layer_margin_top">12.0dip</dimen>
+    <dimen name="channel_layer_margin_bottom">0.0dip</dimen>
+    <dimen name="channel_layer_margin_right">12.0dip</dimen>
+    <dimen name="channel_layer_margin_left">12.0dip</dimen>
+    <dimen name="my_upload_description_margin_left">16.0dip</dimen>
+    <dimen name="panel_heading_padding">32.0dip</dimen>
+    <dimen name="panel_heading_drawable_padding">32.0dip</dimen>
+    <dimen name="button_status_outline_margin_top">32.0dip</dimen>
+    <dimen name="watch_extra_small_padding">8.0dip</dimen>
+    <dimen name="watch_small_padding">16.0dip</dimen>
+    <dimen name="watch_normal_padding">32.0dip</dimen>
+    <dimen name="watch_related_artist_spacing">20.0dip</dimen>
+    <dimen name="related_video_extra_margin_left">28.0dip</dimen>
+    <dimen name="related_video_extra_margin_right">28.0dip</dimen>
+    <dimen name="related_video_extra_margin_top">0.0dip</dimen>
+    <dimen name="related_video_extra_margin_bottom">0.0dip</dimen>
+    <dimen name="watch_activity_add_comment_margin_left">32.0dip</dimen>
+    <dimen name="watch_activity_add_comment_margin_right">32.0dip</dimen>
+    <dimen name="watch_activity_add_comment_margin_top">0.0dip</dimen>
+    <dimen name="watch_activity_add_comment_margin_bottom">0.0dip</dimen>
+    <dimen name="watch_activity_artist_track_margin_left">28.0dip</dimen>
+    <dimen name="watch_activity_artist_track_margin_right">28.0dip</dimen>
+    <dimen name="watch_activity_artist_track_margin_top">0.0dip</dimen>
+    <dimen name="watch_activity_artist_track_margin_bottom">0.0dip</dimen>
+    <dimen name="account_layer_avatar_width">102.0dip</dimen>
+    <dimen name="account_layer_avatar_height">102.0dip</dimen>
+    <dimen name="account_layer_avatar_stats_separation">16.0dip</dimen>
+    <dimen name="account_layer_header_margin_top">16.0dip</dimen>
+    <dimen name="account_layer_header_margin_right">16.0dip</dimen>
+    <dimen name="account_layer_header_margin_left">16.0dip</dimen>
+    <dimen name="account_layer_header_margin_bottom">16.0dip</dimen>
+    <dimen name="account_layer_item_title_margin">10.0dip</dimen>
+    <dimen name="account_layer_selection_radius">4.0dip</dimen>
+    <dimen name="account_layer_inter_column_padding">8.0dip</dimen>
+    <dimen name="account_layer_row_spacing">8.0dip</dimen>
+    <dimen name="account_layer_row_adapter_margin_top">16.0dip</dimen>
+    <dimen name="account_layer_row_adapter_margin_right">16.0dip</dimen>
+    <dimen name="account_layer_row_adapter_margin_left">16.0dip</dimen>
+    <dimen name="account_layer_row_adapter_margin_bottom">16.0dip</dimen>
+    <item type="dimen" name="plus_one_button_padding_left">@dimen/watch_normal_padding</item>
+    <item type="dimen" name="plus_one_button_padding_top">@dimen/watch_small_padding</item>
+    <item type="dimen" name="plus_one_button_padding_right">@dimen/watch_normal_padding</item>
+    <item type="dimen" name="plus_one_button_padding_bottom">@dimen/watch_small_padding</item>
+    <dimen name="channel_store_avatar_width">72.0dip</dimen>
+    <dimen name="channel_store_avatar_height">72.0dip</dimen>
+    <dimen name="channel_store_item_height">140.0dip</dimen>
+    <item type="dimen" name="detailed_video_details_font_size">@dimen/medium_font_size</item>
+</resources>

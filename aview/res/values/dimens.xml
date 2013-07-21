@@ -1,0 +1,28 @@
+<resources>
+
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_medium">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="image_thumbnail_width">320dp</dimen>
+    <dimen name="image_thumbnail_height">133dp</dimen>
+    
+    <dimen name="oflc_rating_width">33dp</dimen>
+    <dimen name="oflc_rating_height">33dp</dimen>
+
+	<dimen name="image_thumbnail_size">100dp</dimen>
+    <dimen name="image_thumbnail_spacing">1dp</dimen>
+    
+    <dimen name="the_feed_item_text_separation">24.0dip</dimen>
+    
+    <dimen name="thumbnail_background_border_width">1.0dip</dimen>
+    
+    <item type="dimen" name="default_video_item_title_font_size">@dimen/large_font_size</item>
+    <item type="dimen" name="default_video_item_duration_font_size">@dimen/medium_font_size</item>
+    
+    <dimen name="large_font_size">18.0sp</dimen>
+    <dimen name="medium_font_size">16.0sp</dimen>
+    
+    <dimen name="sliding_menu_width">240dp</dimen>
+    <dimen name="slidingmenu_offset">60dp</dimen>
+
+</resources>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  #%L
+  iview-api
+  %%
+  Copyright (C) 2013 The aview authors
+  %%
+  All rights reserved.
+  
+  Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+  
+  Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+  Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  #L%
+  -->
+
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:abc="http://www.abc.net.au/tv/mrss"> 
+<channel> 
+	<title><![CDATA[RSS]]></title>
+	<link>http://www.abc.net.au/iview/</link> 
+	<description>ABC iview Programs</description> 
+	<copyright>2012 Australian Broadcasting Corporation</copyright> 
+	<language>en-au</language> 
+	<pubDate>Sun, 21 Oct 2012 21:44:02 +1100</pubDate> 	
+	<ttl>60</ttl>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27668</guid>
+		<link>http://www.abc.net.au/iview/#/view/27668</link>
+		<title><![CDATA[Jack Irish]]></title>
+		<subtitle><![CDATA[Episode 2 Black Tide]]></subtitle>
+		<series><![CDATA[1]]></series>
+		<episode><![CDATA[2]]></episode>
+		<category><![CDATA[drama]]></category>
+		<description><![CDATA[Life's gone pear-shaped for Jack. Linda's left him and a Brisvegas type is muscling in on the racetrack action. When an old teammate of his dad's turns up looking for help, it's a welcome distraction for Jack. CAST: Guy Pearce]]></description>
+		<pubDate>Sun, 21 Oct 2012 21:30:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="5620"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/jackirishjpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27668"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:linkCopy><![CDATA[Go to website]]></abc:linkCopy>
+		<abc:linkURL><![CDATA[http://abc.net.au/tv/jackirish/]]></abc:linkURL>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/jackirish_01_02.mp4?d=wd&a=1fd697d9d0f8cd141c354bafff896c2b]]></abc:videoAsset>
+		<abc:transmitDate>Sun, 21 Oct 2012 20:30:00 +1100</abc:transmitDate>
+		<abc:expireDate>Sun, 04 Nov 2012 21:30:00 +1100</abc:expireDate>
+		<abc:rating>M</abc:rating>
+		<abc:warning><![CDATA[Coarse Language, Sexual References, Violence]]></abc:warning>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27672</guid>
+		<link>http://www.abc.net.au/iview/#/view/27672</link>
+		<title><![CDATA[David Attenborough: Kingdom Of Plants]]></title>
+		<subtitle><![CDATA[Episode 1 Life In The Wet Zone]]></subtitle>
+		<series><![CDATA[1]]></series>
+		<episode><![CDATA[1]]></episode>
+		<category><![CDATA[docs]]></category>
+		<description><![CDATA[David Attenborough explores a whole new dimension in the lives of plants, from the most bizarre to the most beautiful in this sensational new series.]]></description>
+		<pubDate>Sun, 21 Oct 2012 20:30:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="3006"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/davidattenkingdomofplantsjpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27672"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/kingdomplants_01_01.mp4?d=wd&a=d6d7ba0f2b5a29cf508cba31015f7911]]></abc:videoAsset>
+		<abc:transmitDate>Sun, 21 Oct 2012 19:30:00 +1100</abc:transmitDate>
+		<abc:expireDate>Sun, 04 Nov 2012 20:30:00 +1100</abc:expireDate>
+		<abc:rating>G</abc:rating>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27262</guid>
+		<link>http://www.abc.net.au/iview/#/view/27262</link>
+		<title><![CDATA[Doc Martin Series 4]]></title>
+		<subtitle><![CDATA[Episode 2]]></subtitle>
+		<series><![CDATA[4]]></series>
+		<episode><![CDATA[2]]></episode>
+		<category><![CDATA[drama]]></category>
+		<description><![CDATA[Martin struggles with Louisa's surprise news, but Louisa has her own struggle when her return to school is made difficult by the increasingly strange behaviour of the headmaster. CAST: Martin Clunes]]></description>
+		<pubDate>Sat, 20 Oct 2012 20:30:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="2749"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/docmartins4jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27262"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/docmartin_04_02.mp4?d=wd&a=aae3228adc0b7d76308182b6da685fd1]]></abc:videoAsset>
+		<abc:transmitDate>Sat, 20 Oct 2012 19:30:00 +1100</abc:transmitDate>
+		<abc:expireDate>Sat, 03 Nov 2012 20:30:00 +1100</abc:expireDate>
+		<abc:rating>PG</abc:rating>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27285</guid>
+		<link>http://www.abc.net.au/iview/#/view/27285</link>
+		<title><![CDATA[New Tricks Series 9]]></title>
+		<subtitle><![CDATA[Episode 2 Old School Ties]]></subtitle>
+		<series><![CDATA[9]]></series>
+		<episode><![CDATA[2]]></episode>
+		<category><![CDATA[drama]]></category>
+		<description><![CDATA[When the body of young PE teacher Jason Bowe is discovered in woodlands adjoining a prestigious boarding school, UCOS are asked to investigate the case quickly and discreetly. CAST: Amanda Redman, Alun Armstrong]]></description>
+		<pubDate>Fri, 19 Oct 2012 21:30:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="3535"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/newtrickss9thumb2jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27285"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/newtricks_09_02.mp4?d=wd&a=649f7c5c4e1dc6d93e180753a479e439]]></abc:videoAsset>
+		<abc:transmitDate>Fri, 19 Oct 2012 20:30:00 +1100</abc:transmitDate>
+		<abc:expireDate>Fri, 02 Nov 2012 21:30:00 +1100</abc:expireDate>
+		<abc:rating>PG</abc:rating>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27309</guid>
+		<link>http://www.abc.net.au/iview/#/view/27309</link>
+		<title><![CDATA[Alan Carr: Chatty Man Series 9]]></title>
+		<subtitle><![CDATA[Episode 4]]></subtitle>
+		<series><![CDATA[9]]></series>
+		<episode><![CDATA[4]]></episode>
+		<category><![CDATA[comedy]]></category>
+		<description><![CDATA[Alan is joined by TV presenter Paddy McGuinness; Dragons' Den entrepreneurs Theo Paphitis, Deborah Meaden, Duncan Bannatyne, Peter Jones; Strictly Come Dancing contestants and Conor Maynard, who performs 'Turn Around'.]]></description>
+		<pubDate>Thu, 18 Oct 2012 22:40:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="2689"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/alan-carr.jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27309"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/alancarr_09_04.mp4?d=wd&a=19e3edb4a17d6397210e58a0d7af68e0]]></abc:videoAsset>
+		<abc:transmitDate>Thu, 18 Oct 2012 21:40:00 +1100</abc:transmitDate>
+		<abc:expireDate>Thu, 01 Nov 2012 22:40:00 +1100</abc:expireDate>
+		<abc:rating>M</abc:rating>
+		<abc:warning><![CDATA[Coarse Language, Sexual References]]></abc:warning>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27312</guid>
+		<link>http://www.abc.net.au/iview/#/view/27312</link>
+		<title><![CDATA[Rake Series 2]]></title>
+		<subtitle><![CDATA[Episode 7]]></subtitle>
+		<series><![CDATA[2]]></series>
+		<episode><![CDATA[7]]></episode>
+		<category><![CDATA[drama]]></category>
+		<description><![CDATA[Red and David's affair is front page news; Missy decides she wants marriage and children; Cleaver is facing the consequences of the dark path he trod to recover his father's estate. CAST: Richard Roxburgh, Adrienne Pickering]]></description>
+		<pubDate>Thu, 18 Oct 2012 21:30:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="3373"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/rake_s2.jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27312"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:linkCopy><![CDATA[Go to website]]></abc:linkCopy>
+		<abc:linkURL><![CDATA[http://abc.net.au/rake/]]></abc:linkURL>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/rake_02_07.mp4?d=wd&a=2d6d7c2e2af12c666d7327ac510ae98e]]></abc:videoAsset>
+		<abc:transmitDate>Thu, 18 Oct 2012 20:30:00 +1100</abc:transmitDate>
+		<abc:expireDate>Thu, 08 Nov 2012 21:30:00 +1100</abc:expireDate>
+		<abc:rating>M</abc:rating>
+		<abc:warning><![CDATA[Coarse Language, Sexual References, Sex Scenes]]></abc:warning>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27334</guid>
+		<link>http://www.abc.net.au/iview/#/view/27334</link>
+		<title><![CDATA[Kitchen Cabinet Series 2]]></title>
+		<subtitle><![CDATA[Episode 2 Bronwyn Bishop]]></subtitle>
+		<series><![CDATA[2]]></series>
+		<episode><![CDATA[2]]></episode>
+		<category><![CDATA[panel]]></category>
+		<description><![CDATA[Political journalist Annabel Crabb visits Senior Liberal figure and once-touted future prime minister, Bronwyn Bishop, for lunch. She serves a mushroom lasagne with a roma tomato, bocconcini and basil leaf salad.]]></description>
+		<pubDate>Wed, 17 Oct 2012 22:35:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="1842"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/kitchencabs2jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27334"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:linkCopy><![CDATA[Go to website]]></abc:linkCopy>
+		<abc:linkURL><![CDATA[http://www.abc.net.au/tv/kitchencabinet/]]></abc:linkURL>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/kitchencabinet_02_02.mp4?d=wd&a=f95cc56bec0d8b8704eacbd25213bc24]]></abc:videoAsset>
+		<abc:transmitDate>Wed, 17 Oct 2012 21:35:00 +1100</abc:transmitDate>
+		<abc:expireDate>Fri, 28 Dec 2012 22:35:00 +1100</abc:expireDate>
+		<abc:rating>G</abc:rating>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27335</guid>
+		<link>http://www.abc.net.au/iview/#/view/27335</link>
+		<title><![CDATA[The Chaser: Hamster Wheel Series 2]]></title>
+		<subtitle><![CDATA[Episode 4]]></subtitle>
+		<series><![CDATA[2]]></series>
+		<episode><![CDATA[4]]></episode>
+		<category><![CDATA[panel]]></category>
+		<description><![CDATA[The Chaser team gets stuck in traffic, causing them to be extremely late for their own show. The episode mostly comprises long, dull shots of an empty set.]]></description>
+		<pubDate>Wed, 17 Oct 2012 22:05:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="1650"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/hamster-wheel-2.jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27335"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:linkCopy><![CDATA[go to website]]></abc:linkCopy>
+		<abc:linkURL><![CDATA[http://www.abc.net.au/tv/hamsterwheel/]]></abc:linkURL>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/hamsterwheel_02_04.mp4?d=wd&a=7498d9359daf7e864e31eed6a8140fe0]]></abc:videoAsset>
+		<abc:transmitDate>Wed, 17 Oct 2012 21:05:00 +1100</abc:transmitDate>
+		<abc:expireDate>Wed, 28 Nov 2012 22:05:00 +1100</abc:expireDate>
+		<abc:rating>M</abc:rating>
+		<abc:warning><![CDATA[Adult Themes, Sex Scenes, Drug References, Coarse Language ]]></abc:warning>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27338</guid>
+		<link>http://www.abc.net.au/iview/#/view/27338</link>
+		<title><![CDATA[Gruen Planet Series 2]]></title>
+		<subtitle><![CDATA[Episode 9]]></subtitle>
+		<series><![CDATA[2]]></series>
+		<episode><![CDATA[9]]></episode>
+		<category><![CDATA[panel]]></category>
+		<description><![CDATA[Wil, Todd and Russel will run the Gruen Planet scanner across the biggest news stories of the week, at home and abroad, pinpointing exactly where the truth stops and the spin, branding and image control begin.]]></description>
+		<pubDate>Wed, 17 Oct 2012 21:30:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="2100"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/gruen_planet_s2.jpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27338"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/gruenplanet_02_09.mp4?d=wd&a=c6bdfd8eb2b08adba0e448355b2bd122]]></abc:videoAsset>
+		<abc:transmitDate>Wed, 17 Oct 2012 20:30:00 +1100</abc:transmitDate>
+		<abc:expireDate>Wed, 07 Nov 2012 21:30:00 +1100</abc:expireDate>
+		<abc:rating>M</abc:rating>
+		<abc:warning><![CDATA[Nudity, Coarse Language]]></abc:warning>
+	</item>
+	<item>
+		<guid isPermaLink="true">http://www.abc.net.au/iview/#/view/27347</guid>
+		<link>http://www.abc.net.au/iview/#/view/27347</link>
+		<title><![CDATA[USA Votes 2012 Series 2012]]></title>
+		<subtitle><![CDATA[Second Presidential Debate: Town Hall Meeting - Hempstead, New York]]></subtitle>
+		<series><![CDATA[2012]]></series>
+		<category><![CDATA[news]]></category>
+		<description><![CDATA[Major events in the US Presidential election campaign including head to head debates as Barack Obama and Mitt Romney fight it out before election day on November 6.]]></description>
+		<pubDate>Wed, 17 Oct 2012 13:00:00 +1100</pubDate>
+		<media:content type="video/x-flv" bitrate="650" duration="6480"/>
+		<media:thumbnail url="http://tviview.abc.net.au/thumbs/i/usavotespres2nddebatejpg"/>
+		<media:player url="http://www.abc.net.au/iview/#/view/27347"/>
+		<media:restriction relationship="allow" type="country">au</media:restriction>
+		<abc:videoAsset><![CDATA[https://abcsecurehttp-a.akamaihd.net/playback/_definst_/usavotes_12_02.mp4?d=wd&a=b4eaf738ba39adda4886798905eede65]]></abc:videoAsset>
+		<abc:transmitDate>Wed, 17 Oct 2012 12:00:00 +1100</abc:transmitDate>
+		<abc:expireDate>Wed, 31 Oct 2012 13:00:00 +1100</abc:expireDate>
+	</item>
+</channel> 
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory 
+        android:title="@string/pref_hls_settings"
+        android:key="pref_hls_settings">
+        <CheckBoxPreference
+            android:key="pref_hls"
+            android:persistent="true"
+            android:defaultValue="false"
+            android:summaryOn="@string/pref_hls_summ_on"
+            android:summaryOff="@string/pref_hls_summ_off"
+            android:title="@string/pref_hls" />
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+        android:title="@string/pref_about">
+        <Preference
+            android:key="pref_oss"
+            android:title="@string/pref_oss"
+            android:summary="@string/pref_oss_summary" 
+            />
+    </PreferenceCategory>
+
+</PreferenceScreen>

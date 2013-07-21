@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_aview_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!--         android:divider="@android:color/transparent"
+        android:dividerHeight="@dimen/the_feed_item_text_separation" -->
+    <GridView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_small" 
+        android:horizontalSpacing="@dimen/padding_small"
+        android:verticalSpacing="@dimen/padding_medium"
+        android:stretchMode="columnWidth"
+        android:numColumns="@integer/episode_grid_columns">
+    </GridView>
+    
+    <ProgressBar 
+        android:id="@+id/episode_list_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:indeterminateBehavior="cycle"
+        android:indeterminateOnly="true"
+        style="Widget.ProgressBar.Inverse"
+        android:visibility="gone" /> <!-- Gone by default because the loader will show it when it's loading and there are no existing list items to display -->
+
+</FrameLayout>

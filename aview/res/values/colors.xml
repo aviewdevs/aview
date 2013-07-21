@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- action bar -->
+    <color name="black_overlay">#66000000</color>
+    
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <color name="light_grey">#ffcccccc</color>
+    <color name="grey">#ff888888</color>
+    <color name="dark_grey">#ff212121</color>
+    <color name="full_transparent">#00000000</color>
+    <color name="lighter_transparent">#20ffffff</color>
+    <color name="light_transparent">#40ffffff</color>
+    <color name="dark_transparent">#61000000</color>
+    <color name="darker_transparent">#c1000000</color>
+    <color name="red">#ffdd0000</color>
+    <color name="dark_red">#ff990000</color>
+    <color name="green">#ff669900</color>
+
+    <item type="color" name="video_item_duration_font">@color/white</item>
+    <item type="color" name="video_item_duration_background">@color/black</item>
+
+    <color name="thumbnail_background_color">#1a000000</color>
+    <color name="thumbnail_background_solid_color">#ffcfcfcf</color>
+    <color name="thumbnail_background_border_color">#40000000</color>
+
+    <!-- Drawer -->
+    <color name="drawer_divider">#454547</color>
+    <color name="drawer_background">#3a3a3c</color>
+
+</resources>

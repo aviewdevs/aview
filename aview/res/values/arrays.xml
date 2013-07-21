@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="pref_hlsProfile_entries">
+        <item>High Bitrate</item>
+        <item>Low Bitrate</item>
+        <item>Lowest Bitrate</item>
+    </string-array>
+    <string-array name="pref_hlsProfile_values">
+        <item>LIVE_HIGH</item>
+        <item>LIVE_BASE</item>
+        <item>LIVE_LOW</item>
+    </string-array>
+    <string-array name="sliding_menu">
+        <item>@string/sliding_menu_item_featured</item>
+        <item>@string/sliding_menu_item_recent</item>
+        <item>@string/sliding_menu_item_last_chance</item>
+        <item>@string/sliding_menu_item_a_f</item>
+        <item>@string/sliding_menu_item_g_l</item>
+        <item>@string/sliding_menu_item_m_r</item>
+        <item>@string/sliding_menu_item_s_z</item>
+        <item>@string/sliding_menu_item_0_9</item>
+        <item>@string/sliding_menu_item_abc4kids</item>
+        <item>@string/sliding_menu_item_arts</item>
+        <item>@string/sliding_menu_item_comedy</item>
+        <item>@string/sliding_menu_item_documentary</item>
+        <item>@string/sliding_menu_item_drama</item>
+        <item>@string/sliding_menu_item_education</item>
+        <item>@string/sliding_menu_item_indigenous</item>
+        <item>@string/sliding_menu_item_lifestyle</item>
+        <item>@string/sliding_menu_item_news</item>
+        <item>@string/sliding_menu_item_panel</item>
+        <item>@string/sliding_menu_item_sport</item>
+        <item>@string/sliding_menu_item_abc3</item>
+        <item>@string/sliding_menu_item_abc24</item>
+    </string-array>
+
+</resources>
