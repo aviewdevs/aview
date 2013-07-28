@@ -16,9 +16,11 @@ package com.github.aview.app;
  * #L%
  */
 
-
+import java.io.Serializable;
 import java.util.HashMap;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -39,6 +41,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.SearchView;
 
 import com.android.debug.hv.ViewServer;
 import com.github.aview.api.Series;
@@ -115,11 +118,14 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 			mDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.drawable.ic_drawer, R.string.drawer_open,
 					R.string.drawer_closed) {
 
+				boolean userOpening = false;
+
 				/** Called when a drawer has settled in a completely closed state. */
 				@Override
 				public void onDrawerClosed(View drawerView) {
 					getActionBar().setTitle(mTitle);
 					invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+					userOpening = false;
 					super.onDrawerClosed(drawerView);
 				}
 
@@ -128,7 +134,31 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 				public void onDrawerOpened(View drawerView) {
 					getActionBar().setTitle(mDrawerTitle);
 					invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+					if (userOpening && !aviewPrefs.pref_openedDrawer().getOr(false)) {
+						if (Log.isLoggable(TAG, Log.DEBUG))
+							Log.d(TAG, "Setting opened drawer to true");
+						aviewPrefs.pref_openedDrawer().put(true);
+					}
 					super.onDrawerOpened(drawerView);
+				}
+
+				@Override
+				public void onDrawerStateChanged(int newState) {
+					if (!drawerLayout.isDrawerOpen(Gravity.LEFT) && newState == DrawerLayout.STATE_DRAGGING) {
+						userOpening = true;
+					}
+					super.onDrawerStateChanged(newState);
+				}
+
+				@Override
+				public boolean onOptionsItemSelected(MenuItem item) {
+					boolean drawerSelected = super.onOptionsItemSelected(item);
+					if (drawerSelected) {
+						if (!drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+							userOpening = true;
+						}
+					}
+					return drawerSelected;
 				}
 			};
 
@@ -137,14 +167,17 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 			getActionBar().setDisplayHomeAsUpEnabled(true);
 			getActionBar().setHomeButtonEnabled(true);
 
-			if (aviewPrefs.pref_openedDrawer().get() == false) {
+			// Open the drawer if the user hasn't shown they know how to open the drawer
+			// and the app is launching.
+			if (aviewPrefs.pref_openedDrawer().get() == false && selectedPosition == -1) {
 				if (!handler.postDelayed(new Runnable() {
 					@Override
 					public void run() {
 						drawerLayout.openDrawer(Gravity.LEFT);
 					}
-				}, 100))
+				}, 100)) {
 					Log.d(TAG, "Couldn't post runnable");
+				}
 
 			}
 		}
@@ -162,9 +195,7 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 		if (getSupportFragmentManager().findFragmentByTag(AVIEW_FRAGMENT_TAG) == null) {
 			selectPosition(1);
 		} else if (selectedPosition > -1) {
-			String[] menuItems = getResources().getStringArray(R.array.sliding_menu);
-			if (selectedPosition < menuItems.length)
-				setTitle(menuItems[selectedPosition]);
+			setTitle(mTitle);
 		}
 
 		ViewServer.get(this).addWindow(this);
@@ -198,9 +229,10 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 		}
 
 		CharSequence title = getText(selectedItem.getTitleResId());
+		Serializable keyword = selectedItem.getFragmentArg();
 
 		Bundle args = new Bundle();
-		args.putSerializable(AviewFragment.ARG_KEYWORD, selectedItem.getFragmentArg());
+		args.putSerializable(AviewFragment.ARG_KEYWORD, keyword);
 		args.putCharSequence(AviewFragment.ARG_CACHE_KEY, title);
 
 		FragmentManager fragmentManager = getSupportFragmentManager();
@@ -283,7 +315,8 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 	}
 
 	private void popActionBarTitle() {
-		CharSequence title = getSupportFragmentManager().getBackStackEntryAt(0).getBreadCrumbTitle();
+		int topOfStack = getSupportFragmentManager().getBackStackEntryCount() - 1;
+		CharSequence title = getSupportFragmentManager().getBackStackEntryAt(topOfStack).getBreadCrumbTitle();
 		setTitle(title);
 	}
 
@@ -291,6 +324,61 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 	public void setTitle(CharSequence title) {
 		mTitle = title;
 		getActionBar().setTitle(title);
+	}
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+	}
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		// setIntent(intent);
+		handleIntent(intent);
+	}
+
+	/**
+	 * Return true if we handled the intent, false otherwise
+	 * 
+	 * @param intent
+	 *            The intent
+	 * @return true if the intent was handled
+	 */
+	private boolean handleIntent(Intent intent) {
+		if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+			String query = intent.getStringExtra(SearchManager.QUERY);
+
+			final String title = "Search Results";
+
+			Fragment fragment = new AviewSearchFragment_();
+
+			Bundle args = new Bundle();
+			args.putSerializable(AviewFragment.ARG_KEYWORD, query);
+			args.putCharSequence(AviewFragment.ARG_CACHE_KEY, title);
+
+			FragmentManager fragmentManager = getSupportFragmentManager();
+
+			cacheCurrentState(fragmentManager);
+
+			fragment.setArguments(args);
+
+			fragmentManager.beginTransaction().replace(R.id.content_frame, fragment, AVIEW_FRAGMENT_TAG)
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).setBreadCrumbTitle(mTitle)
+					.addToBackStack("search-results").commit();
+
+			slidingMenuInclude.setItemChecked(selectedPosition, false);
+			selectedPosition = -1;
+			setTitle(title);
+
+			// TODO Hide the keyboard after search
+			// View currentFocus = this.getCurrentFocus();
+			// currentFocus.clearFocus();
+			// InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+			// imm.hideSoftInputFromWindow(currentFocus.getWindowToken(), 0);
+
+			return true;
+		}
+		return false;
 	}
 
 	@Override
@@ -308,6 +396,11 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 			}
 			refresh.setActionView(mRefreshIndeterminateProgressView);
 		}
+
+		// Associate searchable configuration with the SearchView
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+		searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 
 		return true;
 	}
@@ -331,31 +424,16 @@ public class AviewActivity extends FragmentActivity implements AviewFragment.Loa
 		if (mDrawerToggle != null && mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}
-		if (item.getItemId() == android.R.id.home) {
-
-			if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-				popActionBarTitle();
-				getSupportFragmentManager().popBackStack();
-			} else if (drawerLayout != null) {
-				if (drawerLayout.isDrawerOpen(Gravity.LEFT)) {
-					drawerLayout.closeDrawer(Gravity.LEFT);
-				} else {
-					// user knows how to open the drawer, so we don't need to show
-					// them how to open the drawer any more.
-					if (aviewPrefs.pref_openedDrawer().get() == false) {
-						aviewPrefs.pref_openedDrawer().put(true);
-					}
-					drawerLayout.openDrawer(Gravity.LEFT);
-				}
-			}
-
-			return true;
-		} else if (item.getItemId() == R.id.menu_refresh) {
+		if (item.getItemId() == R.id.menu_refresh) {
 
 			reloadCurrentFragment();
 
 			return true;
 
+		} else if (item.getItemId() == R.id.menu_search) {
+			if (drawerLayout != null && drawerLayout.isDrawerOpen(Gravity.LEFT)) {
+				drawerLayout.closeDrawer(Gravity.LEFT);
+			}
 		} else if (item.getItemId() == R.id.menu_settings) {
 
 			Intent settingsIntent = new Intent(this, SettingsActivity.class);

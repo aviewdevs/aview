@@ -565,8 +565,7 @@ public class EpisodeActivity extends FragmentActivity implements OnPreparedListe
 
 		if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
-			actionBarBackground = getResources().getDrawable(
-					R.color.black_overlay);
+			actionBarBackground = getResources().getDrawable(R.color.black_overlay);
 
 			if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN)
 				getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
@@ -649,8 +648,13 @@ public class EpisodeActivity extends FragmentActivity implements OnPreparedListe
 				public void onVisibilityChange(boolean visible) {
 					if (visible && getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 						delayedHide(3000);
-						if (mediaController != null)
+						if (mediaController != null) {
 							mediaController.show();
+						}
+						// ActionBar actionBar = getActionBar();
+						// if (actionBar != null) {
+						// actionBar.show();
+						// }
 					}
 				}
 			});
@@ -666,7 +670,7 @@ public class EpisodeActivity extends FragmentActivity implements OnPreparedListe
 			mHideHandler.removeCallbacks(mHideRunnable);
 			mSystemUiHider.show();
 			mSystemUiHider.disable();
-			getActionBar().show();
+			// getActionBar().show();
 		} else if (config.orientation == Configuration.ORIENTATION_LANDSCAPE) {
 			mSystemUiHider.setup();
 			delayedHide(100);
@@ -694,6 +698,10 @@ public class EpisodeActivity extends FragmentActivity implements OnPreparedListe
 			if (mediaController != null) {
 				mediaController.hide();
 			}
+			// ActionBar actionBar = getActionBar();
+			// if (actionBar != null) {
+			// actionBar.hide();
+			// }
 			if (mSystemUiHider != null) {
 				mSystemUiHider.hide();
 			}
@@ -703,7 +711,7 @@ public class EpisodeActivity extends FragmentActivity implements OnPreparedListe
 	private Rect mediaControllerPadding;
 
 	/**
-	 * Schedules a call to hide() in [delay] milliseconds, canceling any previously scheduled calls.
+	 * Schedules a call to hide() in [delayMillis] milliseconds, cancelling any previously scheduled calls.
 	 */
 	public void delayedHide(int delayMillis) {
 		mHideHandler.removeCallbacks(mHideRunnable);

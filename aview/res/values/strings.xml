@@ -2,7 +2,7 @@
 
     <string name="app_name">aview</string>
     
-    <string name="hello_world">Featured</string>
+    <string name="search_hint">Search iview</string>
     
     <string name="high_profile_menu_item">High Profile</string>
     <string name="base_profile_menu_item">Base Profile</string>
@@ -15,10 +15,6 @@
     <string name="VideoView_error_text_invalid_progressive_playback">Media invalid for Progressive Playback</string>
     <string name="VideoView_error_text_unknown">An error has occurred</string>
     <string name="VideoView_error_button">OK</string>
-    
-    <string name="title_section3">Section 3</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section1">Section 1</string>
     
     <string name="title_activity_episodes">EpisodesActivity</string>
     
@@ -89,5 +85,6 @@
     <string name="resume_playing_restart">Start over</string>
     <!-- shown in the video player view while the video is being loaded, before it starts playing -->
     <string name="loading_video">Loading video\u2026</string>
+
 
 </resources>

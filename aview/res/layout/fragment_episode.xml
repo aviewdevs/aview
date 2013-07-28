@@ -20,12 +20,13 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:tag="resizable_thumbnail"
+        android:background="@android:color/background_dark"
         aview:aspectRatio="@fraction/default_video_player_aspect_ratio" >
 
         <VideoView
             android:id="@+id/video_item"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
             android:scaleType="center" />
 

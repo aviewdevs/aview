@@ -7,5 +7,5 @@
     <fraction name="guide_fixed_size">0.0%</fraction>
     <fraction name="default_playlist_item_thumbnail_aspect_ratio">238.99841%</fraction>
     <fraction name="account_layer_item_aspect_ratio">200.0%</fraction>
-    <fraction name="default_video_player_aspect_ratio">177.77777%</fraction>
+    <fraction name="default_video_player_aspect_ratio">177.0%</fraction>
 </resources>

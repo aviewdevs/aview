@@ -16,7 +16,6 @@ package com.github.aview.api.html5;
  * #L%
  */
 
-
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
@@ -340,6 +339,10 @@ public class Html5VideoService implements VideoService {
 	 * @return The array of Series objects
 	 */
 	private Html5Series[] createSeriesArray(Rss rss, boolean sort) {
+		if (rss.getChannel().getItems() == null || rss.getChannel().getItems().size() == 0) {
+			return new Html5Series[0];
+		}
+
 		Html5Series[] retVal;
 
 		ArrayListMultimap<String, Item> seriesBuckets = ArrayListMultimap.create();

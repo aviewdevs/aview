@@ -22,14 +22,14 @@ Building
         $ sudo apt-get install maven
 
 2. Install the [Android SDK]
-3. Download at least Android 4.2 and the Android support JAR through the SDK manager.
+3. Download at least Android 4.3 and the Android support JAR through the SDK manager.
 4. Install the Android maven artefacts using the [Maven Android SDK Deployer], eg:
 
         $ ANDROID_HOME=/path/to/android/sdk; export ANDROID_HOME
         $ mkdir ~/devel && pushd ~/devel
         $ git clone https://github.com/mosabua/maven-android-sdk-deployer.git
         $ cd maven-android-sdk-deployer
-        $ mvn clean install -P4.2,with-javadoc -N
+        $ mvn clean install -P4.3
         $ cd extras
         $ mvn clean install -N
         $ cd compatibility-v4

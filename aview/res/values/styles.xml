@@ -12,6 +12,6 @@
 
     <style name="FullscreenActionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:background">@color/black_overlay</item>
+        <!-- item name="android:background">@color/black_overlay</item-->
     </style>
 </resources>

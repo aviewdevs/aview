@@ -16,7 +16,6 @@ package com.github.aview.app;
  * #L%
  */
 
-
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
@@ -35,7 +34,7 @@ import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
 @EApplication
 public class AviewApplication extends Application {
 
-	private static String TAG = "AviewApplication";
+	private final static String TAG = "AviewApplication";
 
 	@Bean
 	AviewVideoService aviewVideoService;
@@ -44,7 +43,7 @@ public class AviewApplication extends Application {
 	AviewPrefs_ aviewPrefs;
 
 	@AfterInject
-	@Trace
+	@Trace(tag = TAG, level = Log.DEBUG)
 	void init() {
 
 		// if (BuildConfig.DEBUG) {

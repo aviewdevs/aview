@@ -1,8 +1,8 @@
-package com.github.aview.api.html5;
+package com.github.aview.app;
 
 /*
  * #%L
- * iview-api
+ * aview
  * %%
  * Copyright (C) 2013 The aview authors
  * %%
@@ -16,70 +16,24 @@ package com.github.aview.api.html5;
  * #L%
  */
 
-import java.io.Serializable;
-import java.util.List;
 
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.Root;
+import java.io.Serializable;
+
+import com.github.aview.api.Series;
+import com.github.aview.api.VideoServiceException;
+import com.github.aview.beans.AviewVideoService;
+import com.googlecode.androidannotations.annotations.EFragment;
 
 /**
- * 
  * @author aview
  * 
  */
-@Root
-public class Channel implements Serializable {
+@EFragment(R.layout.fragment_aview)
+public class AviewSearchFragment extends AviewSeriesListFragment {
 
-	private static final long serialVersionUID = 5881732929658722006L;
-
-	@Element
-	private String title;
-	@Element
-	private String link;
-	@Element
-	private String description;
-	@Element
-	private String copyright;
-	@Element
-	private String language;
-	@Element
-	private String pubDate;
-	@Element
-	private String ttl;
-	@ElementList(inline = true, required = false)
-	private List<Item> items;
-
-	public String getTitle() {
-		return title;
-	}
-
-	public String getLink() {
-		return link;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public String getCopyright() {
-		return copyright;
-	}
-
-	public String getLanguage() {
-		return language;
-	}
-
-	public String getPubDate() {
-		return pubDate;
-	}
-
-	public String getTtl() {
-		return ttl;
-	}
-
-	public List<Item> getItems() {
-		return items;
+	@Override
+	protected Series[] getData(AviewVideoService videoService, Serializable keyword) throws VideoServiceException {
+		return videoService.search((String) keyword);
 	}
 
 }

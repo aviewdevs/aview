@@ -27,12 +27,12 @@
         <!-- Plugins -->
         <android-maven-plugin.version>3.6.0</android-maven-plugin.version>
         <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
-        <api.platform>17</api.platform>
+        <api.platform>18</api.platform>
 
         <!-- Dependencies -->
         <androidannotations.version>2.7.1</androidannotations.version>
-        <android.version>4.2_r1</android.version>
-        <support.version>13</support.version>
+        <android.version>4.3_r1</android.version>
+        <support.version>18</support.version>
     </properties>
 
     <modules>

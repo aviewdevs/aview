@@ -1,4 +1,3 @@
-
 package com.github.aview.app;
 
 /*
@@ -17,10 +16,12 @@ package com.github.aview.app;
  * #L%
  */
 
-
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
+import android.app.AlertDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -51,7 +52,7 @@ import com.googlecode.androidannotations.annotations.sharedpreferences.Pref;
  * 
  */
 @EFragment
-public abstract class AviewFragment<T> extends Fragment implements LoaderCallbacks<T[]>,
+public abstract class AviewFragment<T> extends Fragment implements LoaderCallbacks<AsyncResult<T[]>>,
 		SharedPreferences.OnSharedPreferenceChangeListener {
 
 	public static final String TAG = "AviewFragment";
@@ -81,6 +82,9 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 
 	ArrayList<T> episodes;
 
+	@InstanceState
+	long lastRefresh;
+
 	@AfterViews
 	void afterViews() {
 		if (keyword == null) {
@@ -99,6 +103,9 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 			bundle.putSerializable(ARG_KEYWORD, keyword);
 
 			getLoaderManager().initLoader(VIDEO_LOADER_ID, bundle, this);
+			lastRefresh = System.currentTimeMillis();
+		} else if (System.currentTimeMillis() > lastRefresh + TimeUnit.MINUTES.toMillis(30)) {
+			reload();
 		}
 	}
 
@@ -113,6 +120,7 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 		bundle.putSerializable(ARG_KEYWORD, keyword);
 
 		getLoaderManager().restartLoader(VIDEO_LOADER_ID, bundle, this);
+		lastRefresh = System.currentTimeMillis();
 	}
 
 	@AfterInject
@@ -179,7 +187,7 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 	 * @see android.app.LoaderManager.LoaderCallbacks#onCreateLoader(int, android.os.Bundle)
 	 */
 	@Override
-	public Loader<T[]> onCreateLoader(int id, Bundle args) {
+	public Loader<AsyncResult<T[]>> onCreateLoader(int id, Bundle args) {
 		if (Log.isLoggable(TAG, Log.DEBUG))
 			Log.d(TAG, "onCreateLoader");
 
@@ -197,29 +205,29 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 				final AviewVideoService videoService = (AviewVideoService) args.getSerializable(VIDEO_SERIVCE);
 				final Serializable keyword = args.getSerializable(ARG_KEYWORD);
 
-				return new AsyncTaskLoader<T[]>(this.getActivity()) {
+				return new AsyncTaskLoader<AsyncResult<T[]>>(this.getActivity()) {
 
 					private static final int STALE_DELTA = 1800000; // 30m
 
 					private final AviewVideoService mVideoService = videoService;
 					private final Serializable mKeyword = keyword;
 					private long mLastLoad;
-					private T[] mResponse;
+					private AsyncResult<T[]> mResponse;
 
 					@Override
-					public T[] loadInBackground() {
+					public AsyncResult<T[]> loadInBackground() {
 						// Log.d(TAG, "loadInBackground");
 						try {
-							return getData(mVideoService, mKeyword);
-						} catch (VideoServiceException e) {
+							return new AsyncResult<T[]>(getData(mVideoService, mKeyword));
+						} catch (Exception e) {
 							if (Log.isLoggable(TAG, Log.ERROR))
 								Log.e(TAG, "Error retrieving data.", e);
-							throw new RuntimeException(e);
+							return new AsyncResult<T[]>(e);
 						}
 					}
 
 					@Override
-					public void deliverResult(T[] data) {
+					public void deliverResult(AsyncResult<T[]> data) {
 						// Here we cache our response.
 						mResponse = data;
 						super.deliverResult(data);
@@ -274,14 +282,27 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 	 * @see android.app.LoaderManager.LoaderCallbacks#onLoadFinished(android.content.Loader, java.lang.Object)
 	 */
 	@Override
-	public void onLoadFinished(Loader<T[]> arg0, T[] arg1) {
+	public void onLoadFinished(Loader<AsyncResult<T[]>> arg0, AsyncResult<T[]> arg1) {
 		if (Log.isLoggable(TAG, Log.DEBUG))
 			Log.d(TAG, "onLoadFinished");
 		if (arg1 != null) {
-			@SuppressWarnings("unchecked")
-			ArrayAdapter<T> adapter = (ArrayAdapter<T>) listView.getAdapter();
-			adapter.clear();
-			adapter.addAll(arg1);
+			if (arg1.isError()) {
+				Exception e = arg1.exception;
+				String message;
+				if (e instanceof UnsupportedOperationException)
+					message = e.getMessage();
+				else if (e instanceof IOException)
+					message = "Couldn't contact iview";
+				else
+					message = "An error has occured.";
+				new AlertDialog.Builder(this.getActivity()).setTitle("Error").setMessage(message)
+						.setNeutralButton("OK", null).create().show();
+			} else {
+				@SuppressWarnings("unchecked")
+				ArrayAdapter<T> adapter = (ArrayAdapter<T>) listView.getAdapter();
+				adapter.clear();
+				adapter.addAll(arg1.data);
+			}
 		}
 		progressBar.setVisibility(View.GONE);
 		finishLoad();
@@ -291,7 +312,7 @@ public abstract class AviewFragment<T> extends Fragment implements LoaderCallbac
 	 * @see android.app.LoaderManager.LoaderCallbacks#onLoaderReset(android.content.Loader)
 	 */
 	@Override
-	public void onLoaderReset(Loader<T[]> arg0) {
+	public void onLoaderReset(Loader<AsyncResult<T[]>> arg0) {
 		if (Log.isLoggable(TAG, Log.DEBUG))
 			Log.d(TAG, "Loader reset " + arg0.toString());
 		@SuppressWarnings("unchecked")

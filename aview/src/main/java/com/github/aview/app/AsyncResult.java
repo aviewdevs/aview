@@ -1,8 +1,8 @@
-package com.github.aview.api.html5;
+package com.github.aview.app;
 
 /*
  * #%L
- * iview-api
+ * aview
  * %%
  * Copyright (C) 2013 The aview authors
  * %%
@@ -16,70 +16,27 @@ package com.github.aview.api.html5;
  * #L%
  */
 
-import java.io.Serializable;
-import java.util.List;
-
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.Root;
 
 /**
- * 
  * @author aview
  * 
  */
-@Root
-public class Channel implements Serializable {
+public class AsyncResult<T> {
 
-	private static final long serialVersionUID = 5881732929658722006L;
+	final T data;
+	final Exception exception;
 
-	@Element
-	private String title;
-	@Element
-	private String link;
-	@Element
-	private String description;
-	@Element
-	private String copyright;
-	@Element
-	private String language;
-	@Element
-	private String pubDate;
-	@Element
-	private String ttl;
-	@ElementList(inline = true, required = false)
-	private List<Item> items;
-
-	public String getTitle() {
-		return title;
+	public AsyncResult(Exception e) {
+		this.exception = e;
+		this.data = null;
 	}
 
-	public String getLink() {
-		return link;
+	public AsyncResult(T data) {
+		this.exception = null;
+		this.data = data;
 	}
 
-	public String getDescription() {
-		return description;
+	public boolean isError() {
+		return exception != null;
 	}
-
-	public String getCopyright() {
-		return copyright;
-	}
-
-	public String getLanguage() {
-		return language;
-	}
-
-	public String getPubDate() {
-		return pubDate;
-	}
-
-	public String getTtl() {
-		return ttl;
-	}
-
-	public List<Item> getItems() {
-		return items;
-	}
-
 }

@@ -16,13 +16,11 @@ package com.github.aview.api.mobile;
  * #L%
  */
 
-
 import java.io.IOException;
 import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -38,7 +36,6 @@ import com.github.aview.api.VideoServiceException;
 import com.github.aview.util.HttpClient;
 import com.github.aview.util.UnauthorizedException;
 import com.github.aview.util.Util;
-import com.google.common.base.Throwables;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
 
@@ -316,13 +313,14 @@ public class MobileVideoService implements VideoService, Serializable {
 
 	@Override
 	public MobileSeries[] search(String searchQuery) throws VideoServiceException {
-		try {
-			return httpClient.get(new URL(MOBILE_URL + "search=" + URLEncoder.encode(searchQuery)),
-					MobileSeries[].class);
-		} catch (Throwable e) {
-			Throwables.propagateIfPossible(e);
-			throw new VideoServiceException(e);
-		}
+		throw new UnsupportedOperationException("HTTP Live Streaming search not implemented yet.");
+		// try {
+		// return httpClient.get(new URL(MOBILE_URL + "search=" + URLEncoder.encode(searchQuery)),
+		// MobileSeries[].class);
+		// } catch (Throwable e) {
+		// Throwables.propagateIfPossible(e);
+		// throw new VideoServiceException(e);
+		// }
 	}
 
 	/**
